@@ -29,7 +29,7 @@ exports.signup = async (req, res) => {
     // Hash the password
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(password, salt);
-
+    user.isVerified = true;
     // Save the user
     await user.save();
 
