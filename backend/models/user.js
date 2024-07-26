@@ -42,6 +42,14 @@ const UserSchema = new mongoose.Schema({
     default: Date.now,
   },
   task: [TaskSchema],
+  userSignedAggrementUrl: {
+    type: String,
+  },
+
+  isAgree: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 module.exports = mongoose.model("User", UserSchema);
